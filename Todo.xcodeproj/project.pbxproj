@@ -16,6 +16,11 @@
 		CEA5BFBB2C50EA5F00376E62 /* TodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BFBA2C50EA5F00376E62 /* TodoUITestsLaunchTests.swift */; };
 		CEA5BFCB2C50EAD600376E62 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BFC82C50EAD600376E62 /* AddView.swift */; };
 		CEA5BFCC2C50EAD600376E62 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BFCA2C50EAD600376E62 /* data.swift */; };
+		CEAC952A2C69F01400EB7680 /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC95292C69F01400EB7680 /* LoginModels.swift */; };
+		CEAC952C2C69F36A00EB7680 /* LoginViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC952B2C69F36A00EB7680 /* LoginViewModels.swift */; };
+		CEAC95302C69F47000EB7680 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC952F2C69F47000EB7680 /* AuthServices.swift */; };
+		CEAC95322C69FE3400EB7680 /* LoginViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC95312C69FE3400EB7680 /* LoginViews.swift */; };
+		CEAC95352C6A021900EB7680 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC95342C6A021900EB7680 /* ToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		CEA5BFBA2C50EA5F00376E62 /* TodoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEA5BFC82C50EAD600376E62 /* AddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		CEA5BFCA2C50EAD600376E62 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		CEAC95292C69F01400EB7680 /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		CEAC952B2C69F36A00EB7680 /* LoginViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModels.swift; sourceTree = "<group>"; };
+		CEAC952F2C69F47000EB7680 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		CEAC95312C69FE3400EB7680 /* LoginViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViews.swift; sourceTree = "<group>"; };
+		CEAC95342C6A021900EB7680 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,9 @@
 		CEA5BF9C2C50EA5C00376E62 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC95332C6A020100EB7680 /* Components */,
+				CEAC952D2C69F44D00EB7680 /* Services */,
+				CEAC95262C69EFCE00EB7680 /* Features */,
 				CEA5BFC92C50EAD600376E62 /* models */,
 				CEA5BFC72C50EAD600376E62 /* views */,
 				CEA5BF9D2C50EA5C00376E62 /* TodoApp.swift */,
@@ -147,6 +160,72 @@
 				CEA5BFCA2C50EAD600376E62 /* data.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		CEAC95242C69EF6F00EB7680 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC95282C69EFE300EB7680 /* Models */,
+				CEAC95272C69EFDA00EB7680 /* ViewModels */,
+				CEAC95252C69EF7900EB7680 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CEAC95252C69EF7900EB7680 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC95312C69FE3400EB7680 /* LoginViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEAC95262C69EFCE00EB7680 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC95242C69EF6F00EB7680 /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		CEAC95272C69EFDA00EB7680 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC952B2C69F36A00EB7680 /* LoginViewModels.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEAC95282C69EFE300EB7680 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC95292C69F01400EB7680 /* LoginModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEAC952D2C69F44D00EB7680 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC952E2C69F45D00EB7680 /* AuthServices */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEAC952E2C69F45D00EB7680 /* AuthServices */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC952F2C69F47000EB7680 /* AuthServices.swift */,
+			);
+			path = AuthServices;
+			sourceTree = "<group>";
+		};
+		CEAC95332C6A020100EB7680 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC95342C6A021900EB7680 /* ToastView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,8 +359,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA5BFA02C50EA5C00376E62 /* ContentView.swift in Sources */,
+				CEAC952A2C69F01400EB7680 /* LoginModels.swift in Sources */,
+				CEAC95322C69FE3400EB7680 /* LoginViews.swift in Sources */,
+				CEAC95302C69F47000EB7680 /* AuthServices.swift in Sources */,
 				CEA5BF9E2C50EA5C00376E62 /* TodoApp.swift in Sources */,
 				CEA5BFCB2C50EAD600376E62 /* AddView.swift in Sources */,
+				CEAC952C2C69F36A00EB7680 /* LoginViewModels.swift in Sources */,
+				CEAC95352C6A021900EB7680 /* ToastView.swift in Sources */,
 				CEA5BFCC2C50EAD600376E62 /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +537,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,6 +566,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
