@@ -13,6 +13,7 @@ class LoginViewModels: ObservableObject {
     @Published var password: String = ""
     @Published var user: User?
     @Published var errorMessage: String?
+    @Published var isFocused: Bool?
     
     private var cancelables = Set<AnyCancellable>()
     
@@ -27,7 +28,7 @@ class LoginViewModels: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    print("Login selesai tanpa kesalahan.")
+                    print("Login success!")
 
                 case .failure(let error):
                     print("Login gagal dengan error: \(error.localizedDescription)")

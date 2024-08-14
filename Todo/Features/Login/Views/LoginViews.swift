@@ -10,31 +10,47 @@ import SwiftUI
 struct LoginViews: View {
     @StateObject private var viewModel = LoginViewModels()
     @State private var showToast: Bool = false
-
+    @FocusState private var isFocus
+    @FocusState private var isFocusPassword
+    @State private var navigate: Bool = false
+    
     var body: some View {
         ZStack {
-            NavigationView {
-                VStack {
-                    TextField("Username", text: $viewModel.username)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .autocapitalization(.none)
-                        .onChange(of: viewModel.username) {newvalue in viewModel.username = newvalue.capitalized}
+            NavigationStack {
+                VStack(alignment: .leading, spacing: 10){
+                    Text("Username").bold()
+                    TextField("Enter your username", text: $viewModel.username)
+                        .frame(height: 55)
+                        .padding(.leading)
+                        .background(.gray.opacity(0.3), in: .rect(cornerRadius: 12))
+                        .focused($isFocus)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 12).stroke(isFocus ? .blue : .clear, lineWidth: 2)
+                        }
+                        .padding(.bottom, 10)
                     
+                    Text("Password").bold()
+                    SecureField("Enter your password", text:  $viewModel.password)
+                        .frame(height: 55)
+                        .padding(.leading)
+                        .background(.gray.opacity(0.3), in: .rect(cornerRadius: 12))
+                        .focused($isFocusPassword)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(isFocusPassword ? .blue : .clear, lineWidth: 2)
+                        }
+                        .padding(.bottom, 10)
                     
-                    SecureField("Password", text: $viewModel.password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
                     Button(action: {
                         viewModel.handleLogin()
                     }) {
                         Text("Login")
                             .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                             .background(Color.blue)
-                            .cornerRadius(8)
+                            .cornerRadius(12)
                     }
-                    .padding()
                     
                     if let user = viewModel.user {
                         Text("Welcome, \(user.username)!")
@@ -42,9 +58,13 @@ struct LoginViews: View {
                     }
                     
                     Spacer()
+                    
+                    NavigationLink(destination: ContentView(), isActive: $navigate){
+                        
+                    }
                 }
-                .navigationTitle("Login")
                 .padding()
+                .navigationTitle("Login")
             }
             
             if showToast {
@@ -55,6 +75,11 @@ struct LoginViews: View {
                 }
                 .transition(.slide)
                 .animation(.easeInOut(duration: 0.5))
+            }
+        }
+        .onReceive(viewModel.$user){ user in
+            if user != nil {
+                navigate = true
             }
         }
         .onReceive(viewModel.$errorMessage) { errorMessage in

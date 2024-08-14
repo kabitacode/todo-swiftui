@@ -12,7 +12,7 @@ class AuthServices {
     static let shared = AuthServices()
     
     func login(username: String, password: String) -> AnyPublisher<User, Error>{
-        let url = URL(string: "https://fakestoreapi.com/auth/login")!
+        let url = URL(string: "https://dummyjson.com/auth/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

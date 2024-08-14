@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4FC7092C6CA2DF001D624A /* mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FC7082C6CA2DF001D624A /* mock.swift */; };
 		CEA5BF9E2C50EA5C00376E62 /* TodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BF9D2C50EA5C00376E62 /* TodoApp.swift */; };
 		CEA5BFA02C50EA5C00376E62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5BF9F2C50EA5C00376E62 /* ContentView.swift */; };
 		CEA5BFA22C50EA5F00376E62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA5BFA12C50EA5F00376E62 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE4FC7082C6CA2DF001D624A /* mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mock.swift; sourceTree = "<group>"; };
 		CEA5BF9A2C50EA5C00376E62 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA5BF9D2C50EA5C00376E62 /* TodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoApp.swift; sourceTree = "<group>"; };
 		CEA5BF9F2C50EA5C00376E62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAC95242C69EF6F00EB7680 /* Login */,
+				CE4FC7082C6CA2DF001D624A /* mock.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				CEA5BF9E2C50EA5C00376E62 /* TodoApp.swift in Sources */,
 				CEA5BFCB2C50EAD600376E62 /* AddView.swift in Sources */,
 				CEAC952C2C69F36A00EB7680 /* LoginViewModels.swift in Sources */,
+				CE4FC7092C6CA2DF001D624A /* mock.swift in Sources */,
 				CEAC95352C6A021900EB7680 /* ToastView.swift in Sources */,
 				CEA5BFCC2C50EAD600376E62 /* data.swift in Sources */,
 			);

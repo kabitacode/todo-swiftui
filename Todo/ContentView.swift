@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  todo
-//
-//  Created by Zulfiqor on 24/07/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -17,43 +10,46 @@ struct ContentView: View {
     }
     
     var body: some View {
-        List($mockdata.indices, id: \.self) { index in
-            HStack{
-                Image(systemName: mockdata[index].isCompleted ? "largecircle.fill.circle" : "circle")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text(mockdata[index].title)
-                Spacer()
-                Image(systemName: "xmark.circle").imageScale(.large).foregroundStyle(.tint)
-                    .onTapGesture {
-                        mockdata.remove(at: index)
-                    }
-            } .onTapGesture {
-                mockdata[index].isCompleted.toggle()
-            }
-        }
-        .toolbar {
-            ToolbarItemGroup(placement: .bottomBar) {
-                Button(action: handleModalView){
-                    HStack {
-                       Image(systemName: "plus.circle.fill")
-                        Text("New Todo")
-                    }
+        NavigationStack {
+            List($mockdata.indices, id: \.self) { index in
+                HStack {
+                    Image(systemName: mockdata[index].isCompleted ? "largecircle.fill.circle" : "circle")
+                        .imageScale(.large)
+                        .foregroundStyle(.tint)
+                    Text(mockdata[index].title)
+                    Spacer()
+                    Image(systemName: "xmark.circle").imageScale(.large).foregroundStyle(.tint)
+                        .onTapGesture {
+                            mockdata.remove(at: index)
+                        }
                 }
-                Spacer()
+                .onTapGesture {
+                    mockdata[index].isCompleted.toggle()
+                }
             }
-        }
-        .sheet(isPresented: $isModal){
-            AddView { item in
-                mockdata.append(item)
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button(action: handleModalView) {
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                            Text("New Todo")
+                        }
+                    }
+                    Spacer()
+                }
             }
+            .sheet(isPresented: $isModal) {
+                AddView { item in
+                    mockdata.append(item)
+                }
+            }
+            .background(Color.white.ignoresSafeArea()) // Atur latar belakang jika perlu
+            .navigationTitle("Task")
         }
     }
 }
 
 #Preview {
-    NavigationStack {
-        ContentView()
-            .navigationTitle("Task")
-    }
+    ContentView()
 }
+
